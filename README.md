@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple Rails app to reproduce a problem in Sorcery 0.13 and higher.
 
-Things you may want to cover:
+The problem is that API controllers break when including the 
+activity_logging submodule in the configuration. 
 
-* Ruby version
+To reproduce, run the app and then run 
 
-* System dependencies
+```
+curl localhost:3000/api/test
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rolling back to Sorcery 0.12 fixes the problem.
